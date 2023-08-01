@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="roboact_leg">
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0.00468211118343997 8.02074076933224E-07 1.44345016779328"
+        rpy="0 0 0" />
+      <mass
+        value="760.637011705538" />
+      <inertia
+        ixx="548.979952619106"
+        ixy="2.95724528472525E-06"
+        ixz="0.701083071392355"
+        iyy="819.608093662225"
+        iyz="-0.000664489681847512"
+        izz="326.652818866655" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hinge_UU">
+    <inertial>
+      <origin
+        xyz="-0.000588001226960122 -0.0538797737282957 0.00407758217854962"
+        rpy="0 0 0" />
+      <mass
+        value="0.012407502121637" />
+      <inertia
+        ixx="2.1547530224452E-05"
+        ixy="4.08560226229756E-09"
+        ixz="3.50399838538868E-11"
+        iyy="2.48420344050443E-06"
+        iyz="4.3882648942814E-07"
+        izz="2.39156461358395E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_UU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_UU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_UU_j"
+    type="fixed">
+    <origin
+      xyz="0.000591115875000159 -0.336809806641101 2.52518148974062"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="hinge_UU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_UL">
+    <inertial>
+      <origin
+        xyz="-0.000350068636117667 0.0187349879184173 -0.0407234626928347"
+        rpy="0 0 0" />
+      <mass
+        value="0.0149562489565382" />
+      <inertia
+        ixx="2.77383053237887E-05"
+        ixy="6.53538296214584E-08"
+        ixz="-1.4129517995376E-07"
+        iyy="2.61494686866994E-05"
+        iyz="9.67139193493285E-06"
+        izz="6.47198136297425E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_UL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_UL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_UL_j"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_UU" />
+    <child
+      link="hinge_UL" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.349"
+      upper="0.349"
+      effort="100"
+      velocity="2" />
+  </joint>
+  <link
+    name="tube_upper">
+    <inertial>
+      <origin
+        xyz="1.39309443702995E-08 -0.000642623368307782 0.00173034700918639"
+        rpy="0 0 0" />
+      <mass
+        value="0.182771131041887" />
+      <inertia
+        ixx="0.0288040348348784"
+        ixy="1.02559628761009E-10"
+        ixz="9.55764880673073E-10"
+        iyy="0.0253156864476513"
+        iyz="0.00938951251460784"
+        izz="0.00352488883961336" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_upper_j"
+    type="fixed">
+    <origin
+      xyz="-0.00059009 0.25204 -0.66064"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_UL" />
+    <child
+      link="tube_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_LU">
+    <inertial>
+      <origin
+        xyz="-0.000588084340786416 -0.0149379000005745 0.0519264306817586"
+        rpy="0 0 0" />
+      <mass
+        value="0.0124080543656935" />
+      <inertia
+        ixx="2.15480311497025E-05"
+        ixy="1.42460075631874E-09"
+        ixz="-3.74261469267327E-09"
+        iyy="2.16045137326289E-05"
+        iyz="6.66316689173819E-06"
+        izz="4.79656409042024E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_LU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_LU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_LU_j"
+    type="fixed">
+    <origin
+      xyz="0.000589745875000963 0.240357925630607 -0.664980149220171"
+      rpy="0 0 0" />
+    <parent
+      link="tube_upper" />
+    <child
+      link="hinge_LU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_LL">
+    <inertial>
+      <origin
+        xyz="-0.00034916233147278 -0.0222211447986073 -0.0389713358298078"
+        rpy="0 0 0" />
+      <mass
+        value="0.0149300118627514" />
+      <inertia
+        ixx="2.77317575100477E-05"
+        ixy="-7.69471635965847E-08"
+        ixz="-1.35726947664152E-07"
+        iyy="2.22963747944028E-05"
+        iyz="-1.24251026830733E-05"
+        izz="1.03187743356261E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_LL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/hinge_LL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_LL_j"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_LU" />
+    <child
+      link="hinge_LL" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.349"
+      upper="0.349"
+      effort="100"
+      velocity="2" />
+  </joint>
+  <link
+    name="tube_lower">
+    <inertial>
+      <origin
+        xyz="-1.46219123198232E-08 -0.00513048443544779 -0.00759988268326572"
+        rpy="0 0 0" />
+      <mass
+        value="0.185067675197675" />
+      <inertia
+        ixx="0.0297078291872775"
+        ixy="1.92332160492431E-09"
+        ixz="-3.37902685499835E-10"
+        iyy="0.0204240923383549"
+        iyz="-0.0137570481564353"
+        izz="0.00932114604754084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_lower_j"
+    type="fixed">
+    <origin
+      xyz="-0.00059077 -0.39035 -0.58958"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_LL" />
+    <child
+      link="tube_lower" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg support ">
+    <inertial>
+      <origin
+        xyz="-1.33226762955019E-15 -4.92225279942193E-05 -7.29412373163818E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00526659250823866" />
+      <inertia
+        ixx="1.57167590827307E-06"
+        ixy="6.98764716172858E-23"
+        ixz="1.03549426819276E-22"
+        iyy="1.66436600986042E-06"
+        iyz="1.37354397942886E-07"
+        izz="1.77521685073794E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/leg support .STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/leg support .STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg support _j"
+    type="fixed">
+    <origin
+      xyz="0 -0.398049308609462 -0.589856114075886"
+      rpy="0 0 0" />
+    <parent
+      link="tube_lower" />
+    <child
+      link="leg support " />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bracket_LU">
+    <inertial>
+      <origin
+        xyz="-6.38378239159465E-16 0.0145342780983785 0.0256538633585248"
+        rpy="0 0 0" />
+      <mass
+        value="0.0137645141673134" />
+      <inertia
+        ixx="5.48133005963988E-06"
+        ixy="1.46861366922931E-20"
+        ixz="2.141050914247E-21"
+        iyy="5.57839537963981E-06"
+        iyz="-8.71254324263437E-08"
+        izz="3.11700050501505E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_LU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_LU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bracket_LU_j"
+    type="fixed">
+    <origin
+      xyz="0 0.0892451996323692 -0.393339833150145"
+      rpy="0 0 0" />
+    <parent
+      link="tube_upper" />
+    <child
+      link="bracket_LU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lin_body_lower">
+    <inertial>
+      <origin
+        xyz="-1.02695629777827E-15 0.00656356022373905 0.208952177753618"
+        rpy="0 0 0" />
+      <mass
+        value="0.309022347011418" />
+      <inertia
+        ixx="0.00364750605295864"
+        ixy="3.24720813590398E-20"
+        ixz="-1.56419225215619E-18"
+        iyy="0.00356583995917527"
+        iyz="8.11035474465104E-05"
+        izz="0.00013212216603784" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_body_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_body_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lin_body_lower_j"
+    type="revolute">
+    <origin
+      xyz="0 -0.025528 -0.33557"
+      rpy="0 0 0" />
+    <parent
+      link="bracket_LU" />
+    <child
+      link="lin_body_lower" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.349"
+      upper="0.349"
+      effort="1"
+      velocity="2" />
+  </joint>
+  <link
+    name="lin_rod_lower">
+    <inertial>
+      <origin
+        xyz="4.77762477635313E-08 6.4424807060981E-05 0.000846808552730005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0845778414790866" />
+      <inertia
+        ixx="0.000513880116052908"
+        ixy="1.08360651886023E-11"
+        ixz="-6.87935177605734E-13"
+        iyy="0.00051093062361553"
+        iyz="-3.85467805075483E-05"
+        izz="7.1698309857688E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_rod_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_rod_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lin_rod_lower_j"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="lin_body_lower" />
+    <child
+      link="lin_rod_lower" />
+    <axis
+      xyz="0 0.0758149323900039 0.997121906301681" />
+    <limit
+      lower="-0.09"
+      upper="0.09"
+      effort="1600"
+      velocity="0.0057" />
+  </joint>
+  <link
+    name="bracket_LL">
+    <inertial>
+      <origin
+        xyz="-5.27355936696949E-16 0.00824557874831927 -0.0283965446018986"
+        rpy="0 0 0" />
+      <mass
+        value="0.0139347492192297" />
+      <inertia
+        ixx="5.50182772901169E-06"
+        ixy="8.63161632025279E-22"
+        ixz="1.38111278709474E-21"
+        iyy="5.47487579704763E-06"
+        iyz="-4.72699576103246E-07"
+        izz="3.24255519229164E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_LL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_LL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bracket_LL_j"
+    type="revolute">
+    <origin
+      xyz="0 -0.00974749495151644 -0.128129763685767"
+      rpy="0 0 0" />
+    <parent
+      link="lin_rod_lower" />
+    <child
+      link="bracket_LL" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.349"
+      upper="0.349"
+      effort="1"
+      velocity="2" />
+  </joint>
+  <link
+    name="tube_bracket_L">
+    <inertial>
+      <origin
+        xyz="-1.46219123475788E-08 -0.00513048443544779 -0.00759988268326572"
+        rpy="0 0 0" />
+      <mass
+        value="0.185067675197675" />
+      <inertia
+        ixx="0.0297078291872775"
+        ixy="1.92332160492432E-09"
+        ixz="-3.37902685499835E-10"
+        iyy="0.0204240923383549"
+        iyz="-0.0137570481564353"
+        izz="0.00932114604754083" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_bracket_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/tube_bracket_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_bracket_L_j"
+    type="fixed">
+    <origin
+      xyz="-0.00059077 -0.39035 -0.58958"
+      rpy="0 0 0" />
+    <parent
+      link="bracket_LL" />
+    <child
+      link="tube_bracket_L" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bracket_UU">
+    <inertial>
+      <origin
+        xyz="0 -0.0189596464258239 0.0227384747054926"
+        rpy="0 0 0" />
+      <mass
+        value="0.013955365921019" />
+      <inertia
+        ixx="5.51624030349116E-06"
+        ixy="-1.06789253406699E-21"
+        ixz="9.57862934234035E-22"
+        iyy="3.50642300774646E-06"
+        iyz="8.64313890009255E-07"
+        izz="5.22581549476594E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_UU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_UU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bracket_UU_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.6383 2.49365"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="bracket_UU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lin_body_upper">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -0.19934176736935 0.159831830732938"
+        rpy="0 0 0" />
+      <mass
+        value="0.309022347011418" />
+      <inertia
+        ixx="0.00364750605295864"
+        ixy="-2.11738895756133E-19"
+        ixz="1.42323277793304E-19"
+        iyy="0.00126716531680485"
+        iyz="0.00161730414396079"
+        izz="0.00243079680840826" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_body_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_body_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lin_body_upper_j"
+    type="revolute">
+    <origin
+      xyz="0 0.2899 -0.25033"
+      rpy="0 0 0" />
+    <parent
+      link="bracket_UU" />
+    <child
+      link="lin_body_upper" />
+    <axis
+      xyz="0 -0.75688 0.65355" />
+    <limit
+      lower="-0.349"
+      upper="0.349"
+      effort="1"
+      velocity="2" />
+  </joint>
+  <link
+    name="lin_rod_upper">
+    <inertial>
+      <origin
+        xyz="-4.77762488459987E-08 -0.000642790213382455 0.000555027947377912"
+        rpy="0 0 0" />
+      <mass
+        value="0.0845778414790875" />
+      <inertia
+        ixx="0.000513880116052915"
+        ixy="7.19856320591277E-12"
+        ixz="8.12860696860823E-12"
+        iyy="0.000221912312218047"
+        iyz="0.000252091974482643"
+        izz="0.000296188142383259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_rod_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/lin_rod_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lin_rod_upper_j"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="lin_body_upper" />
+    <child
+      link="lin_rod_upper" />
+    <axis
+      xyz="0 -0.756883692614432 0.653549597088348" />
+    <limit
+      lower="-0.09"
+      upper="0.09"
+      effort="1600"
+      velocity="0.0057" />
+  </joint>
+  <link
+    name="bracket_UL">
+    <inertial>
+      <origin
+        xyz="-1.97064586870965E-15 0.0279172394131972 -0.00985566679982525"
+        rpy="0 0 0" />
+      <mass
+        value="0.013955365921019" />
+      <inertia
+        ixx="5.51624030349116E-06"
+        ixy="-4.62688919284922E-22"
+        ixz="8.72926540149206E-23"
+        iyy="4.45311391975747E-06"
+        iyz="1.21595561564559E-06"
+        izz="4.27912458275493E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_UL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/bracket_UL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bracket_UL_j"
+    type="revolute">
+    <origin
+      xyz="0 0.0972595545009517 -0.083981123225856"
+      rpy="0 0 0" />
+    <parent
+      link="lin_rod_upper" />
+    <child
+      link="bracket_UL" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Tube_bracket_U">
+    <inertial>
+      <origin
+        xyz="1.39309443702995E-08 -0.00064262336830781 0.00173034700918651"
+        rpy="0 0 0" />
+      <mass
+        value="0.182771131041887" />
+      <inertia
+        ixx="0.0288040348348784"
+        ixy="1.02559628760336E-10"
+        ixz="9.55764880672765E-10"
+        iyy="0.0253156864476513"
+        iyz="0.00938951251460784"
+        izz="0.00352488883961336" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/Tube_bracket_U.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roboact_leg/meshes/Tube_bracket_U.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_bracket_U_j"
+    type="fixed">
+    <origin
+      xyz="-0.00059009 0.25204 -0.66064"
+      rpy="0 0 0" />
+    <parent
+      link="bracket_UL" />
+    <child
+      link="Tube_bracket_U" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
